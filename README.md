@@ -19,6 +19,9 @@ The install process could be time-consuming, and we are thinking about a better 
 `#bash install_ns3_pre.sh`
 
 `#bash install_ns3.sh`
+Here is a [bug](https://www.nsnam.org/bugzilla/show_bug.cgi?id=2917) in ns3, so you need to fix it before build.
+
+in line `../src/mesh/model/dot11s/ie-dot11s-beacon-timing.cc:209` from `catch (std::bad_cast)` to `catch (std::bad_cast&)` instead.
 
 **2 install bmv2**
 
