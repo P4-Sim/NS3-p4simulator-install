@@ -20,5 +20,9 @@ apt-get install cmake libc6-dev libc6-dev-i386 libclang-dev -y
 pip install cxxfilt
 apt-get install libgtk2.0-0 libgtk2.0-dev -y
 apt-get install vtun lxc -y
-apt-get install libboost-signals-dev libboost-filesystem-dev -y
+# this is suit for ubuntu 20.04.4 LTS
+apt-get install libboost1.67-dev
+apt-get install libboost-signals1.67-dev libboost-filesystem1.67-dev -y
 
+# this is suit for ubuntu 16.04.7 LTS
+# apt-get install libboost-signals-dev libboost-filesystem-dev -y

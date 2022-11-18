@@ -6,5 +6,6 @@ mv ns-allinone-3.27 ../
 cd ..
 cd ns-allinone-3.27/
 ./build.py
+# https://www.nsnam.org/bugzilla/show_bug.cgi?id=2917
 cd ../ns4-install/
 
