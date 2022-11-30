@@ -2,6 +2,6 @@
 cd ../ns-allinone-3.27/ns-3.27/
 echo "#! /bin/bash
 touch res.txt
-./waf configure --enable-examples
+./waf configure --enable-examples --enable-tests
 ./waf build
 ./waf --run "p4-example"

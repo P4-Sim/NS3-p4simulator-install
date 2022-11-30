@@ -20,9 +20,10 @@ apt-get install cmake libc6-dev libc6-dev-i386 libclang-dev -y
 pip install cxxfilt
 apt-get install libgtk2.0-0 libgtk2.0-dev -y
 apt-get install vtun lxc -y
-# this is suit for ubuntu 20.04.4 LTS
+# suit for ubuntu 20.04.4 LTS, the module "p4simulator" needs the boost-signals lib.
+# libboost1.67-dev is the latest version that can be installed and used.
 apt-get install libboost1.67-dev
 apt-get install libboost-signals1.67-dev libboost-filesystem1.67-dev -y
 
-# this is suit for ubuntu 16.04.7 LTS
+# suit for ubuntu 16.04.7 LTS(old version)
 # apt-get install libboost-signals-dev libboost-filesystem-dev -y

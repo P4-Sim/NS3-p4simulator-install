@@ -1,27 +1,29 @@
 
 ## Overview
-These are P4Simulator install scripts to help you download, install, run P4Simulator quickly.We have tested it successfully on Ubuntu 16.04.
+This is the p4simulator module in ns3 install scripts to help you download, install, run p4simulator quickly. By now we have tested it successfully on Ubuntu 20.04.
 
-## P4Simulator Installation
-We recommend to install P4Simulator step by step, because there may be some errors in the installation process.We also provide a one-click installation script(install_deps.sh) to install P4Simulator. 
+## p4simulator Installation
+We recommend to install P4Simulator step by step, because there may be some errors in the installation process. We also provide a one-click installation script(`install_deps.sh`) to install P4Simulator. 
 
-### download P4Simulator install scripts
-   `$ git clone https://github.com/P4Simulator/P4Simulator-install.git`   
+### download p4simulator install scripts
+   `$ git clone https://github.com/Mingyumaz/NS3-p4simulator-install.git`   
 
-   `$ cd P4Simulator-install`
+   `$ cd NS3-p4simulator-install`
 
 **You can choose one of the following ways to install P4Simulator.** 
 
 The install process could be time-consuming, and we are thinking about a better way, so stay tuned!. 
-### Way one: install P4Simulator step by step(recommend)
+### The first way: install P4Simulator step by step(recommend)
+
 **1 install ns3**
 
 `#bash install_ns3_pre.sh`
 
 `#bash install_ns3.sh`
-Here is a [bug](https://www.nsnam.org/bugzilla/show_bug.cgi?id=2917) in ns3, so you need to fix it before build.
 
-in line `../src/mesh/model/dot11s/ie-dot11s-beacon-timing.cc:209` from `catch (std::bad_cast)` to `catch (std::bad_cast&)` instead.
+Here is a [bug](https://www.nsnam.org/bugzilla/show_bug.cgi?id=2917) in ns3, so you need to fix it by yourself before build.
+
+PS: in line `../src/mesh/model/dot11s/ie-dot11s-beacon-timing.cc:209` from `catch (std::bad_cast)` to `catch (std::bad_cast&)` instead.
 
 **2 install bmv2**
 
@@ -33,15 +35,19 @@ in line `../src/mesh/model/dot11s/ie-dot11s-beacon-timing.cc:209` from `catch (s
 
 **4 install P4Simulator**
 
-`#bash install_P4Simulator.sh`
+`#bash install_p4simulator.sh`
 
-`#bash create_P4Simulator_run.sh`
+### The Second Way: install P4Simulator one step
 
-### Way two: install P4Simulator one step
 `#bash install_deps.sh`
 
-## Run P4Simulator
-If everything goes well, you will find you are in this folder(ns-3.27),and you need to modify _P4GlobalVar::g_homePath_ value in **src/P4Simulator/examples/p4-demo.cc** to your own home path.(My home path is **/home/kp**),and then just run ns4.
+## Run p4simulator in ns3 with example
 
-`#bash run.sh`
+If everything goes well, you will find you are in this folder(ns-3.27), 
+and you need to modify `_P4GlobalVar::g_homePath_` value in **src/P4Simulator/examples/p4-demo.cc and some other files** to your own home path.
+**Note** that all path information should be modified before run the examples.
+
+(My home path is **/home/kp**), and then run the example.
+
+`#bash p4simulator_example_run.sh`
 

@@ -29,11 +29,10 @@ Description: Behaviral Model
 Version: 0.0.0
 Libs: -L${libdir} -lsimpleswitch_thrift
 Cflags: -I${includedir}" >/usr/local/lib/pkgconfig/simple_switch.pc
-cd ../ns-allinone-3.27/
-cd ns-3.27/
-cd src
-python create-module.py P4Simulator
-rm -r P4Simulator
-git clone git@github.com:P4Simulator/P4Simulator.git
+cd ../ns-allinone-3.27/ns-3.27/src
+python create-module.py p4simulator
+rm -r p4simulator
+git clone git@github.com:Mingyumaz/NS3-p4simulator-module.git
+mv NS3-p4simulator-module p4simulator
 cd ../../ns4-install/
 
