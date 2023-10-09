@@ -1,11 +1,9 @@
 ## Overview
+
 This is the p4simulator module in ns3 install scripts to help you download, install, run p4simulator quickly. By now we have tested it successfully on Ubuntu 20.04.
 
-For the Ubuntu 20.04, We **highly recommend** the use of the method **[Creating the VM](https://github.com/p4lang/tutorials/tree/master/vm-ubuntu-20.04)**. This creates the virtual machine and establishes the users p4 and vagrant, where the environment and source code are built under the user vagrant, and the developer can just use the p4 user.
-
-Also, you build the whole project with your own Ubuntu, noting that bmv2 recommends that you build from source (with modifications such as turning on virtual queues, etc.).
-
 ## p4simulator Installation
+
 We recommend to install P4Simulator step by step, because there may be some errors in the installation process. We also provide a one-click installation script(`install_deps.sh`) to install P4Simulator. 
 
 ### download p4simulator install scripts
@@ -16,7 +14,8 @@ We recommend to install P4Simulator step by step, because there may be some erro
 
 **You can choose one of the following ways to install P4Simulator.** 
 
-The install process could be time-consuming, and we are thinking about a better way, so stay tuned!. 
+The install process could be time-consuming, and we are thinking about a better way, so stay tuned!
+
 ### The first way: install P4Simulator step by step(recommend)
 
 **1 install ns3**
@@ -45,15 +44,25 @@ PS: in line `../src/mesh/model/dot11s/ie-dot11s-beacon-timing.cc:209` from `catc
 
 `#bash install_deps.sh`
 
-## Run p4simulator in ns3 with example
+### The Third Way: install from the VM
 
-If everything goes well, you will find you are in this folder(ns-3.27), 
-and you need to modify `_P4GlobalVar::g_homePath_` value in **src/P4Simulator/examples/p4-demo.cc and some other files** to your own home path.
-**Note** that all path information should be modified before run the examples.
+For the Ubuntu 20.04, We recommend the use of the method **[Creating the VM](https://github.com/p4lang/tutorials/tree/master/vm-ubuntu-20.04)**. This creates the virtual machine and establishes the users p4 and vagrant, where the environment and source code are built under the user vagrant, and the developer can just use the p4 user.
 
-(My home path is **/home/kp**), and then run the example.
+After that, you can build the whole project with this Ubuntu VM, noting that bmv2 recommends that you build from source (with modifications such as turning on virtual queues, etc.).
 
-`#bash p4simulator_example_run.sh`
+## Run p4simulator in ns3
+
+If everything goes well, you will find you are in this folder(ns-3.27), and you need to modify `_P4GlobalVar::g_homePath_` value in **src/P4Simulator/examples/p4-demo.cc and some other files** to your own home path.
+
+**Note** that all path information should be modified before run the p4simulator.
+
+```
+src/p4simulator/model/global.h 
+src/p4simulator/model/global.cc // change the P4GlobalVar::g_homePath path .etc
+```
+
+In the `global.cc` file, many global variables are used. It contains information such as the ns-3 emulator path, the json script path compiled by ns-3 and p4, and the variable name of the expected tracking value.
+
 
 ## fix the bugs for `ns-3`
 
