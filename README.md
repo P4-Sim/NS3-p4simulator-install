@@ -1,3 +1,5 @@
+⭐ Check the [P4sim](https://github.com/HapCommSys/p4sim) (new P4simulator) for ns-3. 
+
 ## Overview
 
 This is the p4simulator module in ns3 install scripts to help you download, install, run p4simulator quickly. By now we have tested it successfully on Ubuntu 20.04.
